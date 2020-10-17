@@ -22,7 +22,7 @@ while True:
         if tetel == 6:
             os.system('python ept/tetel6.py')
 
-        if tetel == 6:
+        if tetel == 7:
             os.system('python ept/tetel7.py')
 
     if konzol == "help":

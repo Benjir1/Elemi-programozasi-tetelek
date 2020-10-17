@@ -1,4 +1,3 @@
-doit = True
 print("A kiválasztás és lineáris keresés tétele\n")
 sve = input("Szóközzel szeretnéd elválasztani a tagjaidat, vagy egyesével szeretnéd beírni? (S = Space, E = egyesével): ").lower()
 
@@ -21,8 +20,6 @@ def hasonlitas(tomb,tizedesjegy):
 
 if sve == "s":
     tizedesjegy = int(input("A legnagyobb számod a tíz hányadik hatványához van közelebb?: "))
-    if tizedesjegy <= 0:
-        doit = False
     tomb = input("Add meg az elemeket!: ").strip().split()
     tagok = len(tomb)
     for i in range(0, tagok):
@@ -32,15 +29,10 @@ if sve == "s":
 
 if sve == "e":
     tizedesjegy = int(input("A legnagyobb számod a tíz hányadik hatványához van legközelebb?: "))
-    if tizedesjegy <= 0:
-        doit = False
     tomb = []
     tagok = int(input("Hány tagot szeretnél megadni?: "))
     for i in range(0, tagok):
         elem = int(input("Add meg az elemedet!: "))
         tomb.append(elem)
     egyesevel = True
-    if doit == True:
-        print(hasonlitas(tomb, tizedesjegy))
-    elif doit == False:
-        print("Sajnos nem helyes hatványt adtál meg. Kérlek próbáld újra!")
+    print(hasonlitas(tomb, tizedesjegy))

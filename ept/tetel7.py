@@ -3,11 +3,8 @@ sve = input("Szóközzel szeretnéd elválasztani a tagjaidat, vagy egyesével s
 nvc = input("Növekvő vagy csökkenő sorrendbe szeretnéd rendezni a tömb tagjait? (N = Növekvő, C = Csökkenő): ").lower()
 
 def novekvorendezes(tomb, hatvany):
-    doit = True
     hatvany += 1
     hatar = 10 ** hatvany
-    if hatvany == 0:
-        doit = False
     end = False
     megoldas = []
     i = 0
@@ -20,17 +17,11 @@ def novekvorendezes(tomb, hatvany):
             i += 1
         if i not in tomb:
             i += 1
-    if doit == True:
-        return f"A pozitív számok növekvő sorrendben: {megoldas}"
-    elif doit == False:
-        return "Sajnos nem helyes hatványt adtál meg. Kérlek próbáld újra!"
+    return f"A pozitív számok növekvő sorrendben: {megoldas}"
 
 def csokkenorendezes(tomb, hatvany):
-    doit = True
     hatvany += 1
     hatar = 10 ** hatvany
-    if hatvany == 0:
-        doit = False
     end = False
     megoldas = []
     i = 0
@@ -43,10 +34,7 @@ def csokkenorendezes(tomb, hatvany):
             i += 1
         if i not in tomb:
             i += 1
-    if doit == True:
-        return f"A pozitív számok növekvő sorrendben: {megoldas[::-1]}"
-    elif doit == False:
-        return "Sajnos nem helyes hatványt adtál meg. Kérlek próbáld újra!"
+    return f"A pozitív számok növekvő sorrendben: {megoldas[::-1]}"
 
 if sve == "s":
     if nvc == "n":
@@ -80,3 +68,5 @@ if sve == "e":
             tomb.append(elem)
         print(csokkenorendezes(tomb, hatvany))
         
+
+print("\n(Az értékek helytelenek lehetnek, ha nem megfelelő hatványértéket írt be!)")

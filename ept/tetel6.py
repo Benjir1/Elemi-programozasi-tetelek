@@ -1,4 +1,3 @@
-doit = True
 print("A maximumkiválasztás tétele\n")
 
 sve = input("Szóközzel szeretnéd elválasztani a tagjaidat, vagy egyesével szeretnéd beírni? (S = Space, E = egyesével): ").lower()
@@ -25,24 +24,16 @@ def kivalasztas(tomb,hatvany):
 
 if sve == "s":
   hatvany = int(input("A legnagyobb szám a tíz melyik hatványához van legközelebb?: "))
-  if hatvany <= 0:
-    doit = False
   tomb = input("Add meg az elemeidet!: ").split()
   for i in range(0, len(tomb)):
     tomb[i] = int(tomb[i])
-
+  print(kivalasztas(tomb, hatvany))
 
 if sve == "e":
   tomb = []
   hatvany = int(input("A legnagyobb szám a tíz melyik hatványához van legközelebb?: "))
-  if hatvany <= 0:
-    doit = False
   tagok = int(input("Hány tagja lesz a tömbödnek?: "))
   for i in range(0, tagok):
     elem = int(input("Add meg az elemedet!: "))
     tomb.append(elem)
-  
-if doit == True:
   print(kivalasztas(tomb, hatvany))
-elif doit == False:
-  print("Sajnos nem helyes hatványt adtál meg. Kérlek próbáld újra!")
